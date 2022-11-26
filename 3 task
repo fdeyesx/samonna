@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+struct shop{
+    string name;
+    int cost;
+};
+
+void input(shop &s){
+    cout << "Enter name of subject u sell: ";
+    cin >> s.name;
+    cout << "Enter a price of subject: ";
+    cin >> s.cost;
+}
+
+void subinput(shop *shopt){
+    for (int i = 0; i < 5; i++){
+        input(shopt[5]);
+    }
+}
+
+void enter(shop *shopt){
+    cout << "Enter a price u need to check is there any subject more expensive: ";
+    int a;
+    cin >> a;
+    for (int i = 0; i < 5; i++){
+        if (shopt[i].cost > a){
+            cout << "Subject called " << shopt[i].name << "costs " << shopt[i].cost << "that more than u requested before.";
+        } else {
+            cout << "Subject called " << shopt[i].name << "doesnt costs as much as u requested.";
+        }
+    }
+}
+
+int main(){
+    shop *shopt = new shop[5];
+    subinput(shopt);
+    enter(shopt);
+
+    return 0;
+}
