@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+template < class T > void work( T& a, T& b ){
+    if (a < b){
+        cout << "The min number is " << a;
+    } else if ( a = b){
+        cout << "Numbers are simular. ";
+    } else {
+        cout << "The min number is " << b;
+    }
+}
+
+int main(){
+    cout << "Enter which type of numbers u want to write: (f, i, c): ";
+    char operation;
+    cin >> operation;
+
+    switch(operation){
+        case 'f':
+          cout << "Enter 2 numbers: ";
+          float a;
+          cin >> a;
+          float b;
+          cin >> b;
+          work(a, b);
+          break;
+        case 'i':
+          cout << "Enter 2 numbers: ";
+          int c;
+          cin >> c;
+          int d;
+          cin >> d;
+          work(c, d);
+          break;
+        case 'c':
+          cout << "Enter 2 numbers: ";
+          char k;
+          cin >> k;
+          char l;
+          cin >> l;
+          work(k, l);
+          break;
+    }
+    return 0;
+}
