@@ -1,0 +1,30 @@
+#include <iostream>
+#include <cstdlib>
+#include <algorithm>
+using namespace std;
+
+int mass(int b[6][5]){
+    for (int i = 0; i < 6; i++){
+        for (int j = 0; i < 5; i++)
+        {
+        b[i][j] = 1 + rand() % (25- 1 + 1);
+        }
+    }
+    return b[6][5];
+}
+
+int minmax(int b[6][5]){
+    int min = min_element(b[0][0], b[6][5]);
+    int max = max_element(b[0][0], b[6][5]);
+ 
+    cout << "The min element is " << min << endl;
+    cout << "The max element is " << max << endl;
+    return 0;
+}
+
+int main(){
+    int b[6][5];
+    mass(b);
+    minmax(b);
+    return 0;
+}
