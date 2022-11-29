@@ -7,7 +7,7 @@ int mass(int b[6][5]){
     for (int i = 0; i < 6; i++){
         for (int j = 0; i < 5; i++)
         {
-        b[i][j] = 1 + rand() % (25- 1 + 1);
+        b[i][j] = 1 + rand() %25;
         }
     }
     return b[6][5];
